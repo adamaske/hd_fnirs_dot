@@ -1,0 +1,19 @@
+{
+	"Processing":{
+		"ProcessingElement":"ses-sparse_sparse",
+		"ApplicationName":"Homer3",
+		"Version":"v1.87.0",
+		"Dependencies":{
+			"Utils":"v1.8.3",
+			"DataTree":"v1.22.0",
+			"FuncRegistry":"v1.5.1"
+		},
+		"DateTime":"September 25, 2025,   14:30:41",
+		"tIncMan":[],
+		"mlActMan":[],
+		"FunctionCalls":[
+			"[dcAvg, nTrials] = hmrE_RunAvg(dcAvgRuns, mlActRuns, nTrialsRuns);",
+			"[dcAvgStd, dcAvgStdErr] = hmrE_RunAvgStd2(dcAvgStdRuns, nTrialsRuns);"
+		]
+	}
+}

@@ -1,0 +1,56 @@
+Application Name :   Homer3, (v1.87.0)
+Date/Time        :   September 25, 2025,   14:29:54
+
+
+
+--------
+active :
+--------
+[dcAvg, nTrials] = hmrG_SubjAvg(dcAvgSubjs, nTrialsSubjs);
+[dcAvgStd, dcAvgStdErr] = hmrG_SubjAvgStd(dcAvgSubjs);
+
+
+-------------------
+ses-sparse_sparse :
+-------------------
+[dcAvg, nTrials] = hmrE_RunAvg(dcAvgRuns, mlActRuns, nTrialsRuns);
+[dcAvgStd, dcAvgStdErr] = hmrE_RunAvgStd2(dcAvgStdRuns, nTrialsRuns);
+
+
+--------
+sparse :
+--------
+[dcAvg, nTrials] = hmrS_SessAvg(dcAvgSess, mlActSess, nTrialsSess);
+[dcAvgStd, dcAvgStdErr] = hmrS_SessAvgStd2(dcAvgStdSess, nTrialsSess);
+
+
+--------------
+sparse_run01 :
+--------------
+dod = hmrR_Intensity2OD(data);
+dod = hmrR_MotionCorrectSplineSG(dod, mlActAuto, 0.99, 10, 1);
+dod = hmrR_BandpassFilt(dod, 0.010, 0.100);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+[dcAvg, dcAvgStd, nTrials, dcNew, dcResid, dcSum2, beta, R, hmrstats] = hmrR_GLM(dc, stim, probe, mlActAuto, Aaux, tIncAuto, rcMap, [-2.0 23.0], 1, 2, [0.1 3.0 1.8 3.0], 15.0, 0, 3, 0);
+
+
+--------------
+sparse_run02 :
+--------------
+dod = hmrR_Intensity2OD(data);
+dod = hmrR_MotionCorrectSplineSG(dod, mlActAuto, 0.99, 10, 1);
+dod = hmrR_BandpassFilt(dod, 0.010, 0.100);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+[dcAvg, dcAvgStd, nTrials, dcNew, dcResid, dcSum2, beta, R, hmrstats] = hmrR_GLM(dc, stim, probe, mlActAuto, Aaux, tIncAuto, rcMap, [-2.0 23.0], 1, 2, [0.1 3.0 1.8 3.0], 15.0, 0, 3, 0);
+
+
+--------------
+sparse_run03 :
+--------------
+dod = hmrR_Intensity2OD(data);
+dod = hmrR_MotionCorrectSplineSG(dod, mlActAuto, 0.99, 10, 1);
+dod = hmrR_BandpassFilt(dod, 0.010, 0.100);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+[dcAvg, dcAvgStd, nTrials, dcNew, dcResid, dcSum2, beta, R, hmrstats] = hmrR_GLM(dc, stim, probe, mlActAuto, Aaux, tIncAuto, rcMap, [-2.0 23.0], 1, 2, [0.1 3.0 1.8 3.0], 15.0, 0, 3, 0);
+
+
